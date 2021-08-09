@@ -1,4 +1,5 @@
 import React from 'react';
+import data from './data'
 // import logo from './logo.svg';
 import './App.css';
 import './index.css';
@@ -11,22 +12,22 @@ function App() {
     document.querySelector(".sidebar").classList.remove("open");
   }
   return (
-    <div classlist="grid-container">
-    <header classlist="header">
-      <div classlist="brand">
+    <div className="grid-container">
+    <header className="header">
+      <div className="brand">
         <button onClick={openMenu}>
           &#9776;
         </button>
         <a href="index.html">amazona</a>
       </div>
-      <div classlist="header-links">
+      <div className="header-links">
         <a href="cart.html">Cart</a>
         <a href="signin.html">Sign In</a>
       </div>
     </header>
-    <aside classlist="sidebar">
+    <aside className="sidebar">
       <h3>Shopping Categories</h3>
-      <button classlist="sidebar-close-button" onClick={closeMenu}>x</button>
+      <button className="sidebar-close-button" onClick={closeMenu}>x</button>
       <ul>
         <li>
           <a href="index.html">Pants</a>
@@ -37,81 +38,29 @@ function App() {
         </li>
       </ul>
     </aside>
-    <main classlist="main">
-      <div classlist="content">
-        <ul classlist="products">
+    <main className="main">
+      <div className="content">
+        <ul className="products">
+          {
+            data.products.map(product => 
           <li>
-            <div classlist="product">
-              <img classlist="product-image" src="../public/images/d1.jpg" alt="product" />
-              <div classlist="product-name">
-                <a href="product.html">Slim Shirt</a>
+            <div className="product">
+              <img className="product-image" src={product.image} alt="product" />
+              <div className="product-name">
+                <a href="product.html">{product.name}</a>
               </div>
-              <div classlist="product-brand">Nike</div>
-              <div classlist="product-price">$60</div>
-              <div classlist="product-rating">4.5 Stars (10 Reviews)</div>
+              <div className="product-brand">{product.brand}</div>
+              <div className="product-price">{product.price}</div>
+              <div className="product-rating">{product.rating} Stars ({product.numReviews})
+             </div>
             </div>
-          </li>
-          <li>
-            <div classlist="product">
-              <img classlist="product-image" src="/images/d1.jpg" alt="product" />
-              <div classlist="product-name">
-                <a href="product.html">Slim Shirt</a>
-              </div>
-              <div classlist="product-brand">Nike</div>
-              <div classlist="product-price">$60</div>
-              <div classlist="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div classlist="product">
-              <img classlist="product-image" src="/images/d1.jpg" alt="product" />
-              <div classlist="product-name">
-                <a href="product.html">Slim Shirt</a>
-              </div>
-              <div classlist="product-brand">Nike</div>
-              <div classlist="product-price">$60</div>
-              <div classlist="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div classlist="product">
-              <img classlist="product-image" src="/images/d1.jpg" alt="product" />
-              <div classlist="product-name">
-                <a href="product.html">Slim Shirt</a>
-              </div>
-              <div classlist="product-brand">Nike</div>
-              <div classlist="product-price">$60</div>
-              <div classlist="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div classlist="product">
-              <img classlist="product-image" src="/images/d1.jpg" alt="product" />
-              <div classlist="product-name">
-                <a href="product.html">Slim Shirt</a>
-              </div>
-              <div classlist="product-brand">Nike</div>
-              <div classlist="product-price">$60</div>
-              <div classlist="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div classlist="product">
-              <img classlist="product-image" src="/images/d1.jpg" alt="product" />
-              <div classlist="product-name">
-                <a href="product.html">Slim Shirt</a>
-              </div>
-              <div classlist ="product-brand">Nike</div>
-              <div classlist ="product-price">$60</div>
-              <div classlist ="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-
+          </li>)
+          }
         </ul>
       </div>
 
     </main>
-    <footer classlist="footer">
+    <footer className="footer">
       All rights reserved.
     </footer>
   </div>
