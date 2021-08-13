@@ -1,7 +1,6 @@
 import React from 'react';
-// import data from './data'
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-// import logo from './logo.svg';
+// import data from './data';
 import './App.css';
 import './index.css';
 import HomeScreen from './Screens/HomeScreen';
